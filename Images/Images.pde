@@ -6,6 +6,8 @@ int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 PImage picBackground;
 Boolean nightmode=false; //note: clock will automatically turn on
+Boolean brightnessControl=false; //Note: ARROWS
+int brightnessNumber=128; //Range:1-255
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
@@ -15,8 +17,15 @@ void setup() {
   appHeight = height;
   //
   //Population
-  int hourNightmode = hour(); //24-hour clock
-  println
+  int hourNightMode = hour(); //24-hour clock
+  println(hourNightMode);
+  if ( hourNightMode>17 ) {
+    nightmode=true;
+  } else if ( hourNightMode<05 ) {
+    nightmode=true;
+  } else {
+    nightmode=false;
+  }
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
