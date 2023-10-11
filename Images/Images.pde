@@ -1,7 +1,11 @@
+/* Program Notes
+- Finish Nightmode; medium and difficult
+*/
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 PImage picBackground;
+Boolean nightmode=false; //note: clock will automatically turn on
 //
 void setup() {
   //fullScreen(); //displayWidth, displayHeight
@@ -11,6 +15,8 @@ void setup() {
   appHeight = height;
   //
   //Population
+  int hourNightmode = hour(); //24-hour clock
+  println
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
